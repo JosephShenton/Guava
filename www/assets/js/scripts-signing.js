@@ -1,5 +1,5 @@
 // You can also require other files to run in this process
-require('./renderer-signing.js');
+require('./assets/js/renderer-signing.js');
 var windowTopBar = document.createElement('div');
 windowTopBar.style.width = "100%";
 windowTopBar.style.height = "38px";
