@@ -17,7 +17,11 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": ">=7.2.4"
+    "electron": ">=9.1.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "decompress": "^4.2.1",
+    "png-normalizer": "^1.0.5",
+    "simple-plist": "^1.1.0"
+  }
 }
