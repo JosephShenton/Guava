@@ -115,6 +115,7 @@ width: 40%;
 }
 
 .mediumButton {
+    text-align: left;
     margin-bottom: 10px;
     background-color: rgba(1, 1, 1, 0.31);
     line-height: 23px;
@@ -122,11 +123,15 @@ width: 40%;
     margin-left: auto;
     margin-right: auto;
     color: #FFF;
-    height: 30px;
+    height: 40px;
     font-weight: 600;
     border-radius: 7px;
     box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.27);
     border: none;
+}
+
+.mediumButton.active {
+    background-color: rgba(105, 105, 105, 0.31);
 }
 
 .smallButton {
@@ -140,6 +145,10 @@ width: 40%;
     border-radius: 7px;
     box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.27);
     border: none;
+}
+
+.smallButton.active {
+    background-color: rgba(105, 105, 105, 0.31);
 }
 
 .smallTitle {
