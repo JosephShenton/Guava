@@ -38,6 +38,11 @@ html, body {
     margin-bottom: -20px;
 }
 
+.logo-small {
+    width: 32px;
+    /* margin-bottom: -20px; */
+}
+
 h1.title {
     font-size: 25px;
     font-weight: 500;
@@ -71,6 +76,18 @@ h2.subtitle {
     width: 100%;
     color: rgba(255, 255, 255, 0.7);
 }
+
+.bottomLeftText {
+    text-align: left;
+    position:absolute;
+    bottom:30px;
+    left: 20px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* width: 100%; */
+    color: rgba(255, 255, 255, 0.7);
+}
+
 
 .column {
     float: left;
@@ -123,4 +140,17 @@ width: 40%;
     border-radius: 7px;
     box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.27);
     border: none;
+}
+
+.smallTitle {
+    padding-top: 32px;
+    font-size: 17px;
+    vertical-align:top;
+}
+
+.smallSubtitle {
+    width: 100% !important;
+    padding-top: 32px;
+    font-size: 17px;
+    vertical-align:top;
 }
