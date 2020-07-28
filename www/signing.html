@@ -23,9 +23,9 @@
             <button class="button smallButton" onclick="window.open('preferences.html');">420 Preferences</button>
           </div>
           <div class="column left-second">
-            <button class="button mediumButton active" onclick="$('#adsSystem').hide(); $('#dylibSystem').hide(); $('#signingCertificates').show();">Signing Certificate</button>
-            <button class="button mediumButton" onclick="$('#signingCertificates').hide(); $('#dylibSystem').hide(); $('#adsSystem').show();">Ads System</button>
-            <button class="button mediumButton" onclick="$('#signingCertificates').hide(); $('#adsSystem').hide(); $('#dylibSystem').show();">DYLIB System</button>
+            <button class="button mediumButton active" id="signingTab" onclick="$('#adsTab').removeClass('active'); $('#dylibTab').removeClass('active'); $('#signingTab').addClass('active'); $('#adsSystem').hide(); $('#dylibSystem').hide(); $('#signingCertificates').show();">Signing Certificate</button>
+            <button class="button mediumButton" id="adsTab" onclick="$('#signingTab').removeClass('active'); $('#dylibTab').removeClass('active'); $('#adsTab').addClass('active'); $('#signingCertificates').hide(); $('#dylibSystem').hide(); $('#adsSystem').show();">Ads System</button>
+            <button class="button mediumButton" id="dylibTab" onclick="$('#signingTab').removeClass('active'); $('#adsTab').removeClass('active'); $('#dylibTab').addClass('active'); $('#signingCertificates').hide(); $('#adsSystem').hide(); $('#dylibSystem').show();">DYLIB System</button>
           </div>
           <div class="column right-second" id="signingCertificates">
             <button class="button mediumButton active" onclick="">Newsstreetjournal</button>
