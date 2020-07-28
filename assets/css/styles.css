@@ -1,0 +1,98 @@
+* {
+    font-family: -apple-system, SF Pro Text, SF UI Text, system-ui, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+html, body {
+    background-color: transparent;
+}
+
+.titlebar {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+}
+
+.titlebar-button {
+    -webkit-app-region: no-drag;
+}
+
+.gradientCard {
+    height: 77px;
+    max-height: 77px;
+    line-height: 77px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 30px;
+    border-radius: 5px;
+    background: linear-gradient(167.47deg, #FD7C7C 0%, #FF6E6E 95.89%);
+}
+
+.content {
+    padding-top: 30px;
+    height: 100vh;
+    width: 100vw;
+    position:relative;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: -20px;
+}
+
+h1.title {
+    font-size: 25px;
+    font-weight: 500;
+    color: #FFF;
+}
+
+h2.subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.enterButton {
+    margin-top: 30px;
+    background-color: rgba(1, 1, 1, 0.31);
+    width: 200px;
+    color: #FFF;
+    height: 50px;
+    font-weight: 600;
+    border-radius: 7px;
+    box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.27);
+    border: none;
+}
+
+.bottomText {
+    text-align: center;
+    position:absolute;
+    bottom:30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.column {
+    float: left;
+    width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.smallButton {
+    margin-bottom: 10px;
+    background-color: rgba(1, 1, 1, 0.31);
+    line-height: 23px;
+    width: 200px;
+    color: #FFF;
+    height: 30px;
+    font-weight: 600;
+    border-radius: 7px;
+    box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.27);
+    border: none;
+}
