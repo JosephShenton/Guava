@@ -184,3 +184,11 @@ width: 40%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+.appName {
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 10px;
+}
