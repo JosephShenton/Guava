@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>420 Signer</title>
+    <link rel="stylesheet" href="assets/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    <center>
+      <div class="content">
+        <img src="assets/images/420.png" alt="Logo" class="logo">
+        <h1 class="title">420 Signer</h1>
+        <h2 class="subtitle">Preferences</h2>
+        <div class="preferenceColumn">
+            <h2 class="subtitle-large">Theme</h2>
+            <button class="button is-white" onclick="require('electron').ipcRenderer.send('setThemeLight'); require('electron').remote.getCurrentWindow().setVibrancy('medium-light');">Light</button>
+            <button class="button is-light" onclick="require('electron').ipcRenderer.send('setThemeMediumLight'); require('electron').remote.getCurrentWindow().setVibrancy('light');">Medium Light</button>
+            <button class="button is-dark" onclick="require('electron').ipcRenderer.send('setThemeDark'); require('electron').remote.getCurrentWindow().setVibrancy('dark')">Dark</button>
+            <button class="button is-black" onclick="require('electron').ipcRenderer.send('setThemeUltraDark'); require('electron').remote.getCurrentWindow().setVibrancy('ultra-dark')">Ultra Dark</button>
+        </div>
+        <div class="bottomText">
+          <p>Created by the Ignition Team.</p>
+        </div>
+      </div>
+    </center>
+    <script src="assets/js/scripts-preferences.js"></script>
+  </body>
+</html>

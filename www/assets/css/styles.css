@@ -55,6 +55,14 @@ h2.subtitle {
     color: rgba(255, 255, 255, 0.7);
 }
 
+h2.subtitle-large {
+    font-size: 17px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+
 .enterButton {
     margin-top: 30px;
     background-color: rgba(1, 1, 1, 0.31);
@@ -216,4 +224,17 @@ width: 40%;
 
 .button:hover {
     color: rgba(255, 255, 255, 0.4);
+}
+
+.preferenceColumn {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+    /* height: 50%; */
+    /* background: rgba(255, 255, 255, 0.6); */
+}
+
+.preferenceColumn .button {
+    border-radius: 8px;
+    margin-right: 10px;
 }

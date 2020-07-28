@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, ipcMain} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -35,7 +35,29 @@ function createWindow () {
 ipcMain.on('resizeWindow', (event, arg) => {
   mainWindow.setSize(1180,473);
   mainWindow.center();
-})
+});
+
+ipcMain.on('setThemeLight', (event, arg) => {
+  mainWindow.setVibrancy('medium-light');
+});
+
+ipcMain.on('setThemeMediumLight', (event, arg) => {
+  mainWindow.setVibrancy('light');
+});
+
+ipcMain.on('setThemeDark', (event, arg) => {
+  mainWindow.setVibrancy('dark');
+});
+
+ipcMain.on('setThemeUltraDark', (event, arg) => {
+  mainWindow.setVibrancy('ultra-dark');
+});
+
+// ipcMain.on('resizeWindow2', (event, arg) => {
+//   const win = require('electron').remote.getCurrentWindow();
+//   win.setSize(410,468);
+//   win.center();
+// })
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
