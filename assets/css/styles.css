@@ -199,3 +199,17 @@ width: 40%;
     margin-left: auto;
     margin-right: auto;
 }
+
+.infoBox {
+    margin-top: 10px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #FFF;
+    font-weight: 500;
+}
+
+.selectButton {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
