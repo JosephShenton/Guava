@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/bulma.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script>window.$ = window.jQuery = require('jquery');</script>
   </head>
   <body>
     <center>
@@ -22,15 +23,25 @@
             <button class="button smallButton" onclick="window.open('preferences.html');">420 Preferences</button>
           </div>
           <div class="column left-second">
-            <button class="button mediumButton active" onclick="">Signing Certificate</button>
-            <button class="button mediumButton" onclick="">Ads System</button>
-            <button class="button mediumButton" onclick="">DYLIB System</button>
+            <button class="button mediumButton active" onclick="$('#adsSystem').hide(); $('#dylibSystem').hide(); $('#signingCertificates').show();">Signing Certificate</button>
+            <button class="button mediumButton" onclick="$('#signingCertificates').hide(); $('#dylibSystem').hide(); $('#adsSystem').show();">Ads System</button>
+            <button class="button mediumButton" onclick="$('#signingCertificates').hide(); $('#adsSystem').hide(); $('#dylibSystem').show();">DYLIB System</button>
           </div>
-          <div class="column right-second">
+          <div class="column right-second" id="signingCertificates">
             <button class="button mediumButton active" onclick="">Newsstreetjournal</button>
             <button class="button mediumButton" onclick="">BLUE ELEPHANT E-RENTALS, LLC</button>
             <button class="button mediumButton" onclick="">Hoola Inc</button>
             <button class="button mediumButton" onclick="">Epson (China) Co., Ltd.</button>
+          </div>
+          <div class="column right-second" id="adsSystem">
+            <button class="button mediumButton active" onclick="">None</button>
+            <button class="button mediumButton" onclick="">Google Admob</button>
+            <button class="button mediumButton" onclick="">AppNext</button>
+          </div>
+          <div class="column right-second" id="dylibSystem">
+            <button class="button mediumButton active" onclick="">None</button>
+            <button class="button mediumButton" onclick="">420 Signer</button>
+            <button class="button mediumButton" onclick="">Ignition Updater</button>
           </div>
           <div class="column right">
             <div class="iconBack">

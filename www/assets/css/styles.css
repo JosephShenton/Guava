@@ -239,3 +239,15 @@ width: 40%;
     border-radius: 8px;
     margin-right: 10px;
 }
+
+#signingCertificates {
+    display: block;
+}
+
+#adsSystem {
+    display: none;
+}
+
+#dylibSystem {
+    display: none;
+}
