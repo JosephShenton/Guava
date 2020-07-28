@@ -143,13 +143,17 @@ width: 40%;
 }
 
 .smallTitle {
-    padding-top: 32px;
-    font-size: 17px;
-    vertical-align:top;
+    /* padding-top: 32px; */
+    font-size: 20px;
+    vertical-align:middle;
+    font-weight: 600;
+    color: #FFF;
+    margin-left: 10px;
+    /* margin-top: 5px; */
 }
 
 .smallSubtitle {
-    width: 100% !important;
+    width: 100%;
     padding-top: 32px;
     font-size: 17px;
     vertical-align:top;
