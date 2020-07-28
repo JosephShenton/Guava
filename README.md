@@ -1,2 +1,9 @@
 # 420Signer
-420 Signer - The most powerful signing utility ever created.
+> The most powerful signing utility ever created.
+
+## Project Status
+> Currently is in very early development. Nothing works except launching the app.
+
+```
+npm install && npm start
+```
