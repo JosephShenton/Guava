@@ -181,7 +181,7 @@ width: 40%;
     height: 100px;
     background: rgba(0, 0, 0, 0.4);
     position: relative;
-    border-radius: 10px;
+    border-radius: 22.37%;
 }
 
 .iconBack img {
@@ -191,6 +191,7 @@ width: 40%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    border-radius: 22.37%;
 }
 
 .appName {
