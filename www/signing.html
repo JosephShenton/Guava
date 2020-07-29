@@ -27,11 +27,8 @@
             <button class="button mediumButton" id="adsTab" onclick="$('#signingTab').removeClass('active'); $('#dylibTab').removeClass('active'); $('#adsTab').addClass('active'); $('#signingCertificates').hide(); $('#dylibSystem').hide(); $('#adsSystem').show();">Ads System</button>
             <button class="button mediumButton" id="dylibTab" onclick="$('#signingTab').removeClass('active'); $('#adsTab').removeClass('active'); $('#dylibTab').addClass('active'); $('#signingCertificates').hide(); $('#adsSystem').hide(); $('#dylibSystem').show();">DYLIB System</button>
           </div>
-          <div class="column right-second" id="signingCertificates">
-            <button class="button mediumButton active" onclick="">Newsstreetjournal</button>
-            <button class="button mediumButton" onclick="">BLUE ELEPHANT E-RENTALS, LLC</button>
-            <button class="button mediumButton" onclick="">Hoola Inc</button>
-            <button class="button mediumButton" onclick="">Epson (China) Co., Ltd.</button>
+          <div class="column right-second" id="signingCertificates" style="height: 85vh; overflow: scroll;">
+
           </div>
           <div class="column right-second" id="adsSystem">
             <button class="button mediumButton active" onclick="">None</button>
@@ -70,5 +67,17 @@
       </div>
     </center>
     <script src="assets/js/scripts-signing.js"></script>
+    <script>
+      $.getJSON('https://raw.githubusercontent.com/JosephShenton/420Certs/master/certs.json', function(data) {
+          // JSON result in `data` variable
+          console.log(data);
+
+          $(jQuery.parseJSON(JSON.stringify(data.certificates))).each(function() {  
+            var displayName = this.information.displayName;
+            var html = '<button class="button mediumButton active" onclick="">'+displayName+'</button>';
+            $("#signingCertificates").append(html);
+          });
+      });
+    </script>
   </body>
 </html>
