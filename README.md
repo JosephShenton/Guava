@@ -10,6 +10,6 @@ brew install openssl@1.1.1g
 npm install && npm start
 
 Linux:
-
-```
 sudo apt install openssl nodejs npm
+```
+
