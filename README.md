@@ -9,7 +9,13 @@ macOS:
 brew install openssl@1.1.1g
 npm install && npm start
 
-Linux:
+Ubuntu Linux:
 sudo apt install openssl nodejs npm
+npm install && npm start
+```
+
+Arch Linux:
+pamac install nodejs npm
+npm install && npm start
 ```
 
