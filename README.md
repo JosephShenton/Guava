@@ -16,7 +16,6 @@ git clone https://github.com/JosephShenton/420Signer.git
 cd 420Signer
 sudo apt install openssl nodejs npm
 npm install && npm start
-```
 
 Arch Linux:
 git clone https://github.com/JosephShenton/420Signer.git
