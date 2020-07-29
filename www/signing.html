@@ -74,7 +74,7 @@
 
           $(jQuery.parseJSON(JSON.stringify(data.certificates))).each(function() {  
             var displayName = this.information.displayName;
-            var html = '<button class="button mediumButton" onclick="$(\'#signingCertificates .active\').removeClass(\'active\'); $(this).addClass(\'active\');">'+displayName+'</button>';
+            var html = '<button class="button mediumButton" onclick="$(\'#signingCertificates .active\').removeClass(\'active\'); $(this).addClass(\'active\');">'+displayName.substring(0, 40)+'</button>';
             $("#signingCertificates").append(html);
           });
       });
