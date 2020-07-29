@@ -5,5 +5,6 @@
 > Currently is in very early development. Nothing works except launching the app.
 
 ```
+brew install openssl@1.1.1g
 npm install && npm start
 ```
