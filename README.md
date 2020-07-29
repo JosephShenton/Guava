@@ -12,3 +12,4 @@ npm install && npm start
 Linux:
 
 ```
+sudo apt install openssl nodejs npm
