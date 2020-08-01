@@ -21,6 +21,7 @@
             <button class="button smallButton" onclick="">Ad Settings</button>
             <button class="button smallButton" onclick="">Import DYLIB</button>
             <button class="button smallButton" onclick="window.open('preferences.html');">420 Preferences</button>
+            <button class="button smallButton" onclick="window.open('preferences.html');">Credits</button>
           </div>
           <div class="column left-second">
             <button class="button mediumButton active" id="signingTab" onclick="$('#adsTab').removeClass('active'); $('#dylibTab').removeClass('active'); $('#signingTab').addClass('active'); $('#adsSystem').hide(); $('#dylibSystem').hide(); $('#signingCertificates').show();">Signing Certificate</button>
@@ -31,14 +32,14 @@
 
           </div>
           <div class="column right-second" id="adsSystem">
-            <button class="button mediumButton active" onclick="">None</button>
-            <button class="button mediumButton" onclick="">Google Admob</button>
-            <button class="button mediumButton" onclick="">AppNext</button>
+            <button class="button mediumButton active" onclick="$('#adsSystem .active').removeClass('active'); $(this).addClass('active');">None</button>
+            <button class="button mediumButton" onclick="$('#adsSystem .active').removeClass('active'); $(this).addClass('active');">Google Admob</button>
+            <button class="button mediumButton" onclick="$('#adsSystem .active').removeClass('active'); $(this).addClass('active');">AppNext</button>
           </div>
           <div class="column right-second" id="dylibSystem">
-            <button class="button mediumButton active" onclick="">None</button>
-            <button class="button mediumButton" onclick="">420 Signer</button>
-            <button class="button mediumButton" onclick="">Ignition Updater</button>
+            <button class="button mediumButton active" onclick="$('#dylibSystem .active').removeClass('active'); $(this).addClass('active');">None</button>
+            <button class="button mediumButton" onclick="$('#dylibSystem .active').removeClass('active'); $(this).addClass('active');">420 Signer</button>
+            <button class="button mediumButton" onclick="$('#dylibSystem .active').removeClass('active'); $(this).addClass('active');">Ignition Updater</button>
           </div>
           <div class="column right">
             <div class="iconBack">
