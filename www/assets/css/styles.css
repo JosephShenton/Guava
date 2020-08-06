@@ -62,6 +62,24 @@ h2.subtitle-large {
     margin-bottom: 20px;
 }
 
+.currentProgress {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+}
+
+.setupProgress {
+    /* margin-top: 30px; */
+    cursor: pointer;
+    pointer-events: none;
+    background-color: rgba(1, 1, 1, 0.31);
+    width: 200px;
+    color: #FFF;
+    height: 50px;
+    font-weight: 600;
+    border-radius: 7px;
+    /* box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.27); */
+    border: none;
+}
 
 .enterButton {
     margin-top: 30px;
