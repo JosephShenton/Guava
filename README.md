@@ -9,7 +9,6 @@
 
 <h4 align="center">A powerful cross-platform signing utility built on top of <a href="https://github.com/zhlynn/zsign" target="_blank">zSign</a>.</h4>
 
-<img src="https://raw.githubusercontent.com/JosephShenton/420Signer/master/branding/signingPage.png" style="border-radius: 10px;">
 <!--
 <p align="center">
   <a href="#key-features">Key Features</a> •
@@ -19,7 +18,9 @@
   <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
-
+--> 
+ ![screenshot](https://raw.githubusercontent.com/JosephShenton/420Signer/master/branding/signingPage.png)
+<!-- 
 ## Key Features
 
 * LivePreview - Make changes, See changes
