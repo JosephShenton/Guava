@@ -29,19 +29,7 @@ setup();
 
 function setup() {
     setTimeout(() => {
-        $('.setupProgress').text("5%");
-        $('.currentProgress').text("Checking Docker Installation");
         checkDockerInstallation();
-        setTimeout(() => {
-            $('.setupProgress').text("10%");
-            $('.currentProgress').text("Building Docker Image");
-            
-            setTimeout(() => {
-                $('.setupProgress').text("15%");
-                $('.currentProgress').text("Testing Docker Image");
-                testDockerImage();
-            }, randomNum(1000, 2000));
-        }, randomNum(1000, 2000));
     }, randomNum(1000, 2000));
 }
 
@@ -50,29 +38,53 @@ function randomNum(a, b) {
 }
 
 function checkDockerInstallation() {
+    $('.setupProgress').text("5%");
+    $('.currentProgress').text("Checking Docker Installation");
     exec('echo $(command -v docker)', (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
-            return;
+            return false;
         }
         if (stderr) {
             console.log(`stderr: ${stderr}`);
-            return;
+            return false;
         }
         console.log(`stdout: ${stdout}`);
+        if (stdout.includes("/docker")) {
+            alert("Docker Installed");
+            buildDockerImage();
+            return true;
+        } else {
+            alert("Please install Docker");
+            return false;
+        }
     });
 }
 
+function buildDockerImage() {
+    setTimeout(() => {
+        $('.setupProgress').text("10%");
+        $('.currentProgress').text("Building Docker Image");
+        
+        testDockerImage();
+    }, randomNum(1000, 2000));   
+}
+
 function testDockerImage() {
-    exec("ls -la", (error, stdout, stderr) => {
-        if (error) {
-            console.log(`error: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-    });
+    setTimeout(() => {
+        $('.setupProgress').text("15%");
+        $('.currentProgress').text("Testing Docker Image");
+
+        exec("ls -la", (error, stdout, stderr) => {
+            if (error) {
+                console.log(`error: ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                console.log(`stderr: ${stderr}`);
+                return;
+            }
+            console.log(`stdout: ${stdout}`);
+        });
+    }, randomNum(1000, 2000));
 }
