@@ -67,6 +67,12 @@ h2.subtitle-large {
     color: rgba(255, 255, 255, 1);
 }
 
+.currentSubProgress {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+}
+
 .setupProgress {
     /* margin-top: 30px; */
     cursor: pointer;

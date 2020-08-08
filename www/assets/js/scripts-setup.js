@@ -1,6 +1,8 @@
 // You can also require other files to run in this process
 require('./assets/js/renderer-setup.js');
 const { exec } = require("child_process");
+var spawn = require('child_process').spawn;
+const fs = require("fs"); // Or `import fs from "fs";` with ESM
 var windowTopBar = document.createElement('div');
 windowTopBar.style.width = "100%";
 windowTopBar.style.height = "38px";
@@ -51,7 +53,7 @@ function checkDockerInstallation() {
         }
         console.log(`stdout: ${stdout}`);
         if (stdout.includes("/docker")) {
-            alert("Docker Installed");
+            // alert("Docker Installed");
             buildDockerImage();
             return true;
         } else {
@@ -62,12 +64,46 @@ function checkDockerInstallation() {
 }
 
 function buildDockerImage() {
-    setTimeout(() => {
-        $('.setupProgress').text("10%");
-        $('.currentProgress').text("Building Docker Image");
-        
-        testDockerImage();
-    }, randomNum(1000, 2000));   
+    $('.setupProgress').text("10%");
+    $('.currentProgress').text("Checking for Docker Image");
+    exec('echo $(docker images -q 420signer 2> /dev/null)', (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return false;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return false;
+        }
+        if (stdout == "" || stdout == "\n" || stdout == "\n\n") {
+            // alert("Please build docker image");
+            setTimeout(() => {
+                $('.setupProgress').text("13%");
+                $('.currentProgress').text("Building Docker Image");
+
+                var buildImage = spawn('docker', ['build', '-t', '420signer', 'https://github.com/zhlynn/zsign.git']);
+
+                buildImage.stdout.on('data', function (data) {
+                console.log('stdout: ' + data.toString());
+                $('.currentSubProgress').text(data.toString());
+                });
+
+                buildImage.stderr.on('data', function (data) {
+                console.log('stderr: ' + data.toString());
+                });
+
+                buildImage.on('exit', function (code) {
+                console.log('child process exited with code ' + code.toString());
+                });
+
+                // testDockerImage();
+            }, randomNum(1000, 2000));
+        } else {
+            // alert("Docker Image Exists");
+            testDockerImage();
+        }
+    });
+
 }
 
 function testDockerImage() {
@@ -75,7 +111,7 @@ function testDockerImage() {
         $('.setupProgress').text("15%");
         $('.currentProgress').text("Testing Docker Image");
 
-        exec("ls -la", (error, stdout, stderr) => {
+        exec('docker run -v "$PWD/www/:$PWD/www/" -w "$PWD/www/" zsign -k "testCertificate/1234.p12" -m "testCertificate/1234.mobileprovision" -p "1234" -o output.ipa -z 9 test.ipa', (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
                 return;
@@ -84,7 +120,12 @@ function testDockerImage() {
                 console.log(`stderr: ${stderr}`);
                 return;
             }
-            console.log(`stdout: ${stdout}`);
+            // console.log(`stdout: ${stdout}`);
+            if (fs.existsSync("www/output.ipa")) {
+                console.log("output.ipa exists");
+            } else {
+                console.log("output.ipa does not exist");
+            }
         });
     }, randomNum(1000, 2000));
 }
