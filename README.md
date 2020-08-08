@@ -19,7 +19,7 @@
   <a href="#license">License</a>
 </p>
 --> 
- ![screenshot](https://raw.githubusercontent.com/JosephShenton/420Signer/master/branding/signingPage.png)
+ ![screenshot](https://raw.githubusercontent.com/JosephShenton/420Signer/master/branding/signingPage_1.png)
 <!-- 
 ## Key Features
 
