@@ -34,7 +34,7 @@ Currently nothing works bar launching the app, building and testing the Docker I
 * Tweak Injection
   - Easily inject DYLIBs into IPAs.
 * Cross platform
-  - Windows, macOS and Linux ready.
+  - Windows (W.I.P), macOS and Linux (W.I.P) ready.
 
 ## How To Use
 
