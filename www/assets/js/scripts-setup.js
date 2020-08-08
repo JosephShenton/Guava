@@ -111,7 +111,7 @@ function testDockerImage() {
         $('.setupProgress').text("15%");
         $('.currentProgress').text("Testing Docker Image");
 
-        exec('docker run -v "$PWD/www/:$PWD/www/" -w "$PWD/www/" zsign -k "testCertificate/1234.p12" -m "testCertificate/1234.mobileprovision" -p "1234" -o output.ipa -z 9 test.ipa', (error, stdout, stderr) => {
+        exec('docker run -v "$PWD/www/:$PWD/www/" -w "$PWD/www/" 420signer -k "testCertificate/1234.p12" -m "testCertificate/1234.mobileprovision" -p "1234" -o output.ipa -z 9 test.ipa', (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
                 return;
