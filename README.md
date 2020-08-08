@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://420signer.app"><img src="https://raw.githubusercontent.com/JosephShenton/420Signer/master/www/assets/images/420.png" alt="420 Signer" width="100"></a>
+  <a href="https://420signer.app"><img src="https://raw.githubusercontent.com/JosephShenton/420Signer/master/branding/logo.png" alt="420 Signer" width="100"></a>
   <br>
   420 Signer
   <br>
@@ -18,9 +18,9 @@
   <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
-
- ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
-
+--> 
+ ![screenshot](https://raw.githubusercontent.com/JosephShenton/420Signer/master/branding/signingPage.png)
+<!-- 
 ## Key Features
 
 * LivePreview - Make changes, See changes
