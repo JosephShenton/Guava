@@ -31,7 +31,7 @@ function setup() {
     setTimeout(() => {
         $('.setupProgress').text("5%");
         $('.currentProgress').text("Checking Docker Installation");
-        
+        checkDockerInstallation();
         setTimeout(() => {
             $('.setupProgress').text("10%");
             $('.currentProgress').text("Building Docker Image");
@@ -47,6 +47,20 @@ function setup() {
 
 function randomNum(a, b) {
     return Math.floor(Math.random() * b) + a;
+}
+
+function checkDockerInstallation() {
+    exec('echo $(command -v docker)', (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+    });
 }
 
 function testDockerImage() {

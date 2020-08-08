@@ -13,16 +13,7 @@ ipcRenderer.send('resizeWindow');
 decompress('www/test.ipa', 'output').then(files => {
     console.log('done!');
     // destination.txt will be created or overwritten by default.
-    fs.copyFile('output/Payload/Undecimus.app/AppIcon60x60@2x.png', 'www/test.png', (err) => {
-        if (err) throw err;
-        console.log('AppIcon60x60@2x.png was copied to test.png');
-        let pngNormailzer = require('png-normalizer'),
-            newBuf = pngNormailzer('www/test.png');
-        
-        if(newBuf){
-            fs.writeFileSync('www/test2.png',newBuf);
-        };
-    });
+    
 });
 
 function fromDir(startPath,filter,callback){
@@ -47,6 +38,16 @@ function fromDir(startPath,filter,callback){
 
 fromDir('output/Payload/',/\.app$/,function(filename){
     console.log('-- found: ',filename);
+    fs.copyFile(filename+'/AppIcon60x60@2x.png', 'www/test.png', (err) => {
+        if (err) throw err;
+        console.log('AppIcon60x60@2x.png was copied to test.png');
+        let pngNormailzer = require('png-normalizer'),
+            newBuf = pngNormailzer('www/test.png');
+        
+        if(newBuf){
+            fs.writeFileSync('www/test2.png',newBuf);
+        };
+    });
     plist.readFile(filename+'/Info.plist', function(err, data) {
         if (err) {
           throw err
