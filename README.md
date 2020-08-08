@@ -8,13 +8,13 @@
 macOS:
 git clone https://github.com/JosephShenton/420Signer.git
 cd 420Signer
-brew install openssl@1.1.1g
+brew install node
 npm install && npm start
 
 Ubuntu Linux:
 git clone https://github.com/JosephShenton/420Signer.git
 cd 420Signer
-sudo apt install openssl nodejs npm
+sudo apt install nodejs npm
 npm install && npm start
 
 Arch Linux:
