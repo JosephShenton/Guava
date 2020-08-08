@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://420signer.app"><img src="https://raw.githubusercontent.com/JosephShenton/420Signer/master/www/assets/images/420.png" alt="420 Signer" width="200"></a>
+  <a href="https://420signer.app"><img src="https://raw.githubusercontent.com/JosephShenton/420Signer/master/www/assets/images/420.png" alt="420 Signer" width="100"></a>
   <br>
   420 Signer
   <br>
