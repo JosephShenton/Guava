@@ -40,7 +40,7 @@ function randomNum(a, b) {
 }
 
 function checkDockerInstallation() {
-    $('.setupProgress').text("5%");
+    $('.setupProgress').text("3%");
     $('.currentProgress').text("Checking Docker Installation");
     exec('echo $(command -v docker)', (error, stdout, stderr) => {
         if (error) {
@@ -64,7 +64,7 @@ function checkDockerInstallation() {
 }
 
 function buildDockerImage() {
-    $('.setupProgress').text("10%");
+    $('.setupProgress').text("5%");
     $('.currentProgress').text("Checking for Docker Image");
     exec('echo $(docker images -q 420signer 2> /dev/null)', (error, stdout, stderr) => {
         if (error) {
@@ -78,7 +78,7 @@ function buildDockerImage() {
         if (stdout == "" || stdout == "\n" || stdout == "\n\n") {
             // alert("Please build docker image");
             setTimeout(() => {
-                $('.setupProgress').text("13%");
+                $('.setupProgress').text("6%");
                 $('.currentProgress').text("Building Docker Image");
 
                 var buildImage = spawn('docker', ['build', '-t', '420signer', 'https://github.com/zhlynn/zsign.git']);
@@ -111,7 +111,8 @@ function buildDockerImage() {
 
 function testDockerImage() {
     setTimeout(() => {
-        $('.setupProgress').text("15%");
+        var newPercent = $('.setupProgress').text().replace("%", "");
+        $('.setupProgress').text(parseInt(newPercent, 10) + 1 + "%");
         $('.currentProgress').text("Testing Docker Image");
 
         exec('docker run -v "$PWD/www/:$PWD/www/" -w "$PWD/www/" 420signer -k "testCertificate/1234.p12" -m "testCertificate/1234.mobileprovision" -p "1234" -o output.ipa -z 9 test.ipa', (error, stdout, stderr) => {
