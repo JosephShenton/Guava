@@ -57,7 +57,7 @@ function checkDockerInstallation() {
             buildDockerImage();
             return true;
         } else {
-            alert("Please install Docker");
+            alert("Please install Docker and restart 420 Signer.");
             return false;
         }
     });
