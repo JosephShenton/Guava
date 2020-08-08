@@ -84,16 +84,19 @@ function buildDockerImage() {
                 var buildImage = spawn('docker', ['build', '-t', '420signer', 'https://github.com/zhlynn/zsign.git']);
 
                 buildImage.stdout.on('data', function (data) {
-                console.log('stdout: ' + data.toString());
-                $('.currentSubProgress').text(data.toString());
+                    console.log('stdout: ' + data.toString());
+                    var newPercent = $('.setupProgress').text().replace("%", "");
+                    $('.setupProgress').text(parseInt(newPercent, 10) + 1 + "%");
+                    $('.currentSubProgress').text(data.toString());
                 });
 
                 buildImage.stderr.on('data', function (data) {
-                console.log('stderr: ' + data.toString());
+                    console.log('stderr: ' + data.toString());
                 });
 
                 buildImage.on('exit', function (code) {
-                console.log('child process exited with code ' + code.toString());
+                    console.log('child process exited with code ' + code.toString());
+                    testDockerImage();
                 });
 
                 // testDockerImage();
@@ -114,17 +117,23 @@ function testDockerImage() {
         exec('docker run -v "$PWD/www/:$PWD/www/" -w "$PWD/www/" 420signer -k "testCertificate/1234.p12" -m "testCertificate/1234.mobileprovision" -p "1234" -o output.ipa -z 9 test.ipa', (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
+                alert("Failed to sign test app. Please file a bug report using the text in the next alert");
+                alert(`${stderr}`);
                 return;
             }
             if (stderr) {
                 console.log(`stderr: ${stderr}`);
+                alert("Failed to sign test app. Please file a bug report using the text in the next alert");
+                alert(`${stderr}`);
                 return;
             }
             // console.log(`stdout: ${stdout}`);
             if (fs.existsSync("www/output.ipa")) {
                 console.log("output.ipa exists");
+                location.href = 'signing.html';
             } else {
                 console.log("output.ipa does not exist");
+                alert("Failed to sign test app. Please file a bug report. Press CMD + OPTION + I or CTRL + ALT + I");
             }
         });
     }, randomNum(1000, 2000));
