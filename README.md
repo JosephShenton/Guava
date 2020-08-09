@@ -21,7 +21,20 @@
  
 ## Project Status
 
-Currently nothing works bar launching the app, building and testing the Docker Image.
+- [x] Launching 420 Signer
+- [x] Setup 420 Signer
+- [x] Checking Docker Installation
+- [x] Building Docker Image
+- [x] Testing Docker Image
+- [x] Select App (Individual Resign)
+- [ ] Select Folder (Bulk Resign)
+- [ ] Check Certificates
+- [ ] Import Certificates
+- [ ] Ad Settings
+- [ ] Importing DYLIB
+- [ ] Sign App
+- [ ] Separate Revoked and Signed Certificates
+- [ ] Change App Icon
 
 ## Key Features
 
