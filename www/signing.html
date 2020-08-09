@@ -16,13 +16,12 @@
           <div class="column left" id="options">
             <button class="button smallButton active" onclick="$('#options .active').removeClass('active'); $(this).addClass('active'); $('#selectFolder').hide(); $('#selectApp').show();">Individual Sign</button>
             <button class="button smallButton" onclick="$('#options .active').removeClass('active'); $(this).addClass('active'); $('#selectFolder').show(); $('#selectApp').hide();">Bulk Resign</button>
-            <button class="button smallButton" onclick="">Check Certs</button>
             <button class="button smallButton" onclick="reloadCertificates();">Reload Certs</button>
             <button class="button smallButton" onclick="">Import Cert</button>
             <button class="button smallButton" onclick="">Ad Settings</button>
             <button class="button smallButton" onclick="">Import DYLIB</button>
-            <button class="button smallButton" onclick="window.open('preferences.html');">420 Preferences</button>
-            <button class="button smallButton" onclick="window.open('preferences.html');">Credits</button>
+            <!-- <button class="button smallButton" onclick="window.open('preferences.html');">420 Preferences</button> -->
+            <button class="button smallButton" onclick="window.open('credits.html');">Credits</button>
           </div>
           <div class="column left-second">
             <button class="button mediumButton active" id="signingTab" onclick="$('#adsTab').removeClass('active'); $('#dylibTab').removeClass('active'); $('#signingTab').addClass('active'); $('#adsSystem').hide(); $('#dylibSystem').hide(); $('#signingCertificates').show();">Signing Certificate</button>
@@ -30,6 +29,11 @@
             <button class="button mediumButton" id="dylibTab" onclick="$('#signingTab').removeClass('active'); $('#adsTab').removeClass('active'); $('#dylibTab').addClass('active'); $('#signingCertificates').hide(); $('#adsSystem').hide(); $('#dylibSystem').show();">DYLIB System</button>
           </div>
           <div class="column right-second" id="signingCertificates" style="height: 85vh; overflow: scroll;">
+            <h4 style="color: #FFF;">Special Certificates</h4>
+            <div id="specialCertificates">
+              <p style="color: rgba(255,255,255,0.6);">No special certificates were found.</p>
+            </div>
+            <br>
             <h4 style="color: #FFF;">Signed Certificates</h4>
             <div id="signedCertificates">
               <p style="color: rgba(255,255,255,0.6);">No signed certificates were found.</p>
@@ -50,7 +54,7 @@
           </div>
           <div class="column right">
             <div class="iconBack">
-              <img src="test2.png" class="appIcon" alt="Logo">
+              <img src="assets/images/defaultIcon.png" class="appIcon" alt="Logo">
             </div>
             <!-- <br> -->
             <center>

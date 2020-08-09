@@ -31,7 +31,7 @@
   - [ ] Select Folder (Bulk Resign)
   - [ ] Sign App
 * [ ] Certificates
-  - [ ] Check Certificates
+  <!-- - [ ] Check Certificates -->
   - [x] Reload Certificates
   - [ ] Import Certificates
   - [x] Revoked Certificates
