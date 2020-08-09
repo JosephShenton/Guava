@@ -35,7 +35,7 @@
   - [ ] Import Certificates
   - [x] Revoked Certificates
   - [ ] Signed Certificates
-  - [ ] Separate Certificates
+  - [x] Separate Certificates
 * [ ] Ads
   - [ ] AdMob
   - [ ] AppNext
