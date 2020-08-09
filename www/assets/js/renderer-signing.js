@@ -6,6 +6,7 @@ const decompress = require('decompress');
 var plist = require('simple-plist');
 const fs = require('fs');
 var path = require('path');
+var rimraf = require("rimraf");
 
 // Right after the line where you changed the document.location
 ipcRenderer.send('resizeWindow');
@@ -13,7 +14,32 @@ ipcRenderer.send('resizeWindow');
 decompress('www/test.ipa', 'output').then(files => {
     console.log('done!');
     // destination.txt will be created or overwritten by default.
-    
+    fromDir('output/Payload/',/\.app$/,function(filename){
+        console.log('-- found: ',filename);
+        fs.copyFile(filename+'/AppIcon60x60@2x.png', 'www/test.png', (err) => {
+            if (err) throw err;
+            console.log('AppIcon60x60@2x.png was copied to test.png');
+            let pngNormailzer = require('png-normalizer'),
+                newBuf = pngNormailzer('www/test.png');
+            
+            if(newBuf){
+                fs.writeFileSync('www/test2.png',newBuf);
+            };
+        });
+        plist.readFile(filename+'/Info.plist', function(err, data) {
+            if (err) {
+              throw err
+            }
+            console.log(JSON.stringify(data));
+            var info = data;
+            console.log(info.CFBundleDisplayName);
+            // localStorage.setItem("appName", info.CFBundleDisplayName);
+            document.getElementsByClassName("appName")[0].innerText = info.CFBundleDisplayName;
+            document.getElementsByClassName("appVersion")[0].innerText = info.CFBundleShortVersionString;
+            document.getElementsByClassName("appBuild")[0].innerText = info.CFBundleVersion;
+          });
+    });
+    rimraf("output/", function () { console.log("done"); });
 });
 
 function fromDir(startPath,filter,callback){
@@ -35,29 +61,3 @@ function fromDir(startPath,filter,callback){
         /*else*/ if (filter.test(filename)) callback(filename);
     };
 };
-
-fromDir('output/Payload/',/\.app$/,function(filename){
-    console.log('-- found: ',filename);
-    fs.copyFile(filename+'/AppIcon60x60@2x.png', 'www/test.png', (err) => {
-        if (err) throw err;
-        console.log('AppIcon60x60@2x.png was copied to test.png');
-        let pngNormailzer = require('png-normalizer'),
-            newBuf = pngNormailzer('www/test.png');
-        
-        if(newBuf){
-            fs.writeFileSync('www/test2.png',newBuf);
-        };
-    });
-    plist.readFile(filename+'/Info.plist', function(err, data) {
-        if (err) {
-          throw err
-        }
-        console.log(JSON.stringify(data));
-        var info = data;
-        console.log(info.CFBundleDisplayName);
-        // localStorage.setItem("appName", info.CFBundleDisplayName);
-        document.getElementsByClassName("appName")[0].innerText = info.CFBundleDisplayName;
-        document.getElementsByClassName("appVersion")[0].innerText = info.CFBundleShortVersionString;
-        document.getElementsByClassName("appBuild")[0].innerText = info.CFBundleVersion;
-      })
-});
