@@ -43,9 +43,17 @@
   - [ ] Import DYLIB
 * [ ] App Information
   - [ ] Change App Icon
+    - [ ] UI
+    - [ ] On-Device
   - [ ] Change App Name
+    - [x] UI
+    - [ ] On-Device
   - [ ] Change App Version
+    - [x] UI
+    - [ ] On-Device
   - [ ] Change App Build
+    - [x] UI
+    - [ ] On-Device
 
 ## Key Features
 
