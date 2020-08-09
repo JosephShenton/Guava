@@ -17,7 +17,7 @@
   <a href="#license">License</a>
 </p>
 
- ![screenshot](https://raw.githubusercontent.com/JosephShenton/420Signer/master/branding/signingPage_1.png)
+ ![screenshot](https://raw.githubusercontent.com/JosephShenton/420Signer/master/branding/signingPage_2.png)
  
 ## Project Status
 
