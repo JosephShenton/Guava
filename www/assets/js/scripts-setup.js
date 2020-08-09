@@ -132,6 +132,7 @@ function testDockerImage() {
             if (fs.existsSync("www/output.ipa")) {
                 console.log("output.ipa exists");
                 location.href = 'signing.html';
+                localStorage.setItem("isSetup", true)
             } else {
                 console.log("output.ipa does not exist");
                 alert("Failed to sign test app. Please file a bug report. Press CMD + OPTION + I or CTRL + ALT + I");
