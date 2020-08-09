@@ -21,11 +21,12 @@
  
 ## Project Status
 
-- [x] Launching 420 Signer
-- [x] Setup 420 Signer
-- [x] Checking Docker Installation
-- [x] Building Docker Image
-- [x] Testing Docker Image
+* [x] Setup
+  - [x] Launching 420 Signer
+  - [x] Checking Docker Installation
+  - [x] Building Docker Image
+  - [x] Testing Docker Image
+
 - [x] Select App (Individual Resign)
 - [ ] Select Folder (Bulk Resign)
 - [ ] Check Certificates

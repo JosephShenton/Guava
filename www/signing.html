@@ -29,7 +29,9 @@
             <button class="button mediumButton" id="dylibTab" onclick="$('#signingTab').removeClass('active'); $('#adsTab').removeClass('active'); $('#dylibTab').addClass('active'); $('#signingCertificates').hide(); $('#adsSystem').hide(); $('#dylibSystem').show();">DYLIB System</button>
           </div>
           <div class="column right-second" id="signingCertificates" style="height: 85vh; overflow: scroll;">
-
+            <h4 style="color: #FFF;">Signed Certificates</h4>
+            <p style="color: rgba(255,255,255,0.6);">No signed certificates were found.</p>
+            <h4 style="color: #FFF;">Revoked Certificates</h4>
           </div>
           <div class="column right-second" id="adsSystem">
             <button class="button mediumButton active" onclick="$('#adsSystem .active').removeClass('active'); $(this).addClass('active');">None</button>
