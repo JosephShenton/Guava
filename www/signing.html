@@ -13,9 +13,9 @@
     <center>
       <div class="content">
         <div class="row">
-          <div class="column left">
-            <button class="button smallButton active" onclick="">Individual Sign</button>
-            <button class="button smallButton" onclick="">Bulk Resign</button>
+          <div class="column left" id="options">
+            <button class="button smallButton active" onclick="$('#options .active').removeClass('active'); $(this).addClass('active'); $('.selectButton').text('Select App');">Individual Sign</button>
+            <button class="button smallButton" onclick="$('#options .active').removeClass('active'); $(this).addClass('active'); $('.selectButton').text('Select Folder');">Bulk Resign</button>
             <button class="button smallButton" onclick="">Check Certs</button>
             <button class="button smallButton" onclick="">Import Cert</button>
             <button class="button smallButton" onclick="">Ad Settings</button>
