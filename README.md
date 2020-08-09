@@ -1,9 +1,9 @@
 
 <h1 align="center">
   <br>
-  <a href="https://420signer.app"><img src="https://raw.githubusercontent.com/JosephShenton/420Signer/master/branding/logo.png" alt="420 Signer" width="100"></a>
+  <a href="https://guava.tools"><img src="https://raw.githubusercontent.com/JosephShenton/Guava/master/branding/logo.png" alt="Guava" width="100"></a>
   <br>
-  420 Signer
+  Guava
   <br>
   
 </h1>
@@ -17,15 +17,19 @@
   <a href="#license">License</a>
 </p>
 
- ![screenshot](https://raw.githubusercontent.com/JosephShenton/420Signer/master/branding/signingPage_2.png)
+ ![screenshot](https://raw.githubusercontent.com/JosephShenton/Guava/master/branding/signingPage_2.png)
  
 ## Project Status
 
 * [x] Setup
-  - [x] Launching 420 Signer
+  - [x] Launching Guava
   - [x] Checking Docker Installation
   - [x] Building Docker Image
   - [x] Testing Docker Image
+* [ ] On-Device Signing
+  - [ ] UI
+    - [x] Design
+    - [ ] Product
 * [ ] Signing
   - [x] Select App (Individual Resign)
   - [ ] Select Folder (Bulk Resign)
@@ -61,7 +65,7 @@
 * Bulk Resign
   - Resigning a huge amount of IPAs has never been easier.
 * Certificates
-  - We provide revokes and signed certificates for use with 420 Signer.
+  - We provide revokes and signed certificates for use with Guava.
 * Ads
   - Easily integrate Google Admob or AppNext advertisments into signed apps.
 * Tweak Injection
