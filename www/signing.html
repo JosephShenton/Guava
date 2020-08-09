@@ -30,8 +30,12 @@
           </div>
           <div class="column right-second" id="signingCertificates" style="height: 85vh; overflow: scroll;">
             <h4 style="color: #FFF;">Signed Certificates</h4>
-            <p style="color: rgba(255,255,255,0.6);">No signed certificates were found.</p>
+            <div id="signedCertificates">
+              <p style="color: rgba(255,255,255,0.6);">No signed certificates were found.</p>
+            </div>
+            <br>
             <h4 style="color: #FFF;">Revoked Certificates</h4>
+            <div id="revokedCertificates"></div>
           </div>
           <div class="column right-second" id="adsSystem">
             <button class="button mediumButton active" onclick="$('#adsSystem .active').removeClass('active'); $(this).addClass('active');">None</button>
@@ -49,13 +53,13 @@
             </div>
             <!-- <br> -->
             <center>
-              <span class="appName">420 Mobile</span>
+              <span class="appName" contenteditable="true">420 Mobile</span>
               <button class="button smallButton changeIcon" onclick="">Change Icon</button>
             </center>
             <div class="infoBox">
-              <p><span style="float: left;">Version:</span> <span style="float: right; color: rgba(255, 255, 255, 0.6);" class="appVersion">0.0.1</span></p>
+              <p><span style="float: left;">Version:</span> <span style="float: right; color: rgba(255, 255, 255, 0.6);" class="appVersion" contenteditable="true">0.0.1</span></p>
               <br>
-              <p><span style="float: left;">Build:</span> <span style="float: right; color: rgba(255, 255, 255, 0.6);" class="appBuild">123</span></p>
+              <p><span style="float: left;">Build:</span> <span style="float: right; color: rgba(255, 255, 255, 0.6);" class="appBuild" contenteditable="true">123</span></p>
             </div>
             <button class="button smallButton selectButton" id="selectApp" onclick="selectApp();">Select App</button>
             <button class="button smallButton selectButton" id="selectFolder" style="display: none;" onclick="selectFolder();">Select Folder</button>
@@ -79,7 +83,7 @@
           $(jQuery.parseJSON(JSON.stringify(data.certificates))).each(function() {  
             var displayName = this.information.displayName;
             var html = '<button class="button mediumButton" onclick="$(\'#signingCertificates .active\').removeClass(\'active\'); $(this).addClass(\'active\');">'+displayName.substring(0, 40)+'</button>';
-            $("#signingCertificates").append(html);
+            $("#revokedCertificates").append(html);
           });
       });
     </script>
