@@ -17,6 +17,7 @@
             <button class="button smallButton active" onclick="$('#options .active').removeClass('active'); $(this).addClass('active'); $('#selectFolder').hide(); $('#selectApp').show();">Individual Sign</button>
             <button class="button smallButton" onclick="$('#options .active').removeClass('active'); $(this).addClass('active'); $('#selectFolder').show(); $('#selectApp').hide();">Bulk Resign</button>
             <button class="button smallButton" onclick="">Check Certs</button>
+            <button class="button smallButton" onclick="reloadCertificates();">Reload Certs</button>
             <button class="button smallButton" onclick="">Import Cert</button>
             <button class="button smallButton" onclick="">Ad Settings</button>
             <button class="button smallButton" onclick="">Import DYLIB</button>
@@ -86,6 +87,20 @@
             $("#revokedCertificates").append(html);
           });
       });
+
+      function reloadCertificates() {
+        $("#revokedCertificates").html("");
+        $.getJSON('https://raw.githubusercontent.com/JosephShenton/420Certs/master/certs.json', {_: new Date().getTime()}, function(data) {
+          // JSON result in `data` variable
+          console.log(data);
+
+          $(jQuery.parseJSON(JSON.stringify(data.certificates))).each(function() {  
+            var displayName = this.information.displayName;
+            var html = '<button class="button mediumButton" onclick="$(\'#signingCertificates .active\').removeClass(\'active\'); $(this).addClass(\'active\');">'+displayName.substring(0, 40)+'</button>';
+            $("#revokedCertificates").append(html);
+          });
+        });
+      }
     </script>
   </body>
 </html>

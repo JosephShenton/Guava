@@ -32,6 +32,7 @@
   - [ ] Sign App
 * [ ] Certificates
   - [ ] Check Certificates
+  - [x] Reload Certificates
   - [ ] Import Certificates
   - [x] Revoked Certificates
   - [ ] Signed Certificates
