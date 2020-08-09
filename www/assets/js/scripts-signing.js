@@ -1,5 +1,7 @@
 // You can also require other files to run in this process
 require('./assets/js/renderer-signing.js');
+const {dialog} = require('electron').remote;
+
 var windowTopBar = document.createElement('div');
 windowTopBar.style.width = "100%";
 windowTopBar.style.height = "38px";
@@ -23,3 +25,26 @@ title.style.marginTop = "9px";
 document.getElementById("titleBar").appendChild(title);
 document.body.style.paddingTop = "15px";
 document.body.style.zIndex = "0";
+
+function selectApp() {
+    let types = [
+        {name: 'iOS Apps', extensions: ['ipa']}
+    ],
+
+    options = {filters:types, properties:['openFile']};
+
+    dialog.showOpenDialog(options, (filePaths) => {
+        console.log(filePaths)
+    })
+}
+
+function selectFolder() {
+    dialog.showOpenDialog({
+        properties: ['openDirectory']
+    }, function (files) {
+        if (files !== undefined) {
+            // handle files
+            console.log(files);
+        }
+    });
+}

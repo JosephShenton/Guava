@@ -14,8 +14,8 @@
       <div class="content">
         <div class="row">
           <div class="column left" id="options">
-            <button class="button smallButton active" onclick="$('#options .active').removeClass('active'); $(this).addClass('active'); $('.selectButton').text('Select App');">Individual Sign</button>
-            <button class="button smallButton" onclick="$('#options .active').removeClass('active'); $(this).addClass('active'); $('.selectButton').text('Select Folder');">Bulk Resign</button>
+            <button class="button smallButton active" onclick="$('#options .active').removeClass('active'); $(this).addClass('active'); $('#selectFolder').hide(); $('#selectApp').show();">Individual Sign</button>
+            <button class="button smallButton" onclick="$('#options .active').removeClass('active'); $(this).addClass('active'); $('#selectFolder').show(); $('#selectApp').hide();">Bulk Resign</button>
             <button class="button smallButton" onclick="">Check Certs</button>
             <button class="button smallButton" onclick="">Import Cert</button>
             <button class="button smallButton" onclick="">Ad Settings</button>
@@ -55,7 +55,8 @@
               <br>
               <p><span style="float: left;">Build:</span> <span style="float: right; color: rgba(255, 255, 255, 0.6);" class="appBuild">123</span></p>
             </div>
-            <button class="button smallButton selectButton" onclick="">Select App</button>
+            <button class="button smallButton selectButton" id="selectApp" onclick="selectApp();">Select App</button>
+            <button class="button smallButton selectButton" id="selectFolder" style="display: none;" onclick="selectFolder();">Select Folder</button>
             <button class="button smallButton signButton" onclick="">Sign App</button>
             
           </div>
