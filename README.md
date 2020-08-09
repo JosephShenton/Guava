@@ -26,16 +26,26 @@
   - [x] Checking Docker Installation
   - [x] Building Docker Image
   - [x] Testing Docker Image
-
-- [x] Select App (Individual Resign)
-- [ ] Select Folder (Bulk Resign)
-- [ ] Check Certificates
-- [ ] Import Certificates
-- [ ] Ad Settings
-- [ ] Importing DYLIB
-- [ ] Sign App
-- [ ] Separate Revoked and Signed Certificates
-- [ ] Change App Icon
+* [ ] Signing
+  - [x] Select App (Individual Resign)
+  - [ ] Select Folder (Bulk Resign)
+  - [ ] Sign App
+* [ ] Certificates
+  - [ ] Check Certificates
+  - [ ] Import Certificates
+  - [x] Revoked Certificates
+  - [ ] Signed Certificates
+  - [ ] Separate Certificates
+* [ ] Ads
+  - [ ] AdMob
+  - [ ] AppNext
+* [ ] DYLIBs
+  - [ ] Import DYLIB
+* [ ] App Information
+  - [ ] Change App Icon
+  - [ ] Change App Name
+  - [ ] Change App Version
+  - [ ] Change App Build
 
 ## Key Features
 
