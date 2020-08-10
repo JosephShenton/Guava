@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>420 Signer</title>
+    <title>Guava</title>
     <link rel="stylesheet" href="assets/css/bulma.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -20,7 +20,7 @@
             <button class="button smallButton" onclick="">Import Cert</button>
             <button class="button smallButton" onclick="">Ad Settings</button>
             <button class="button smallButton" onclick="">Import DYLIB</button>
-            <button class="button smallButton" onclick="window.open('preferences.html');">420 Preferences</button>
+            <button class="button smallButton" onclick="window.open('preferences.html');">Guava Preferences</button>
             <button class="button smallButton" onclick="window.open('credits.html');">Credits</button>
           </div>
           <div class="column left-second">
@@ -49,7 +49,7 @@
           </div>
           <div class="column right-second" id="dylibSystem">
             <button class="button mediumButton active" onclick="$('#dylibSystem .active').removeClass('active'); $(this).addClass('active');">None</button>
-            <button class="button mediumButton" onclick="$('#dylibSystem .active').removeClass('active'); $(this).addClass('active');">420 Signer</button>
+            <button class="button mediumButton" onclick="$('#dylibSystem .active').removeClass('active'); $(this).addClass('active');">Guava</button>
             <button class="button mediumButton" onclick="$('#dylibSystem .active').removeClass('active'); $(this).addClass('active');">Ignition Updater</button>
           </div>
           <div class="column right">
@@ -58,7 +58,7 @@
             </div>
             <!-- <br> -->
             <center>
-              <span class="appName" contenteditable="true">420 Mobile</span>
+              <span class="appName" contenteditable="true">Guava Mobile</span>
               <button class="button smallButton changeIcon" onclick="">Change Icon</button>
             </center>
             <div class="infoBox">
@@ -74,14 +74,14 @@
         </div>
         <div class="bottomLeftText">
           <p class="smallP"><img src="assets/images/420.png" alt="Logo" class="logo-small" style="vertical-align: middle;"> 
-            <span class="smallTitle">420 Signer</span>
+            <span class="smallTitle">Guava</span>
           </p>
         </div>
       </div>
     </center>
     <script src="assets/js/scripts-signing.js"></script>
     <script>
-      $.getJSON('https://raw.githubusercontent.com/JosephShenton/420Certs/master/certs.json', function(data) {
+      $.getJSON('https://raw.githubusercontent.com/JosephShenton/GuavaCerts/master/certs.json', function(data) {
           // JSON result in `data` variable
           console.log(data);
 
@@ -94,7 +94,7 @@
 
       function reloadCertificates() {
         $("#revokedCertificates").html("");
-        $.getJSON('https://raw.githubusercontent.com/JosephShenton/420Certs/master/certs.json', {_: new Date().getTime()}, function(data) {
+        $.getJSON('https://raw.githubusercontent.com/JosephShenton/GuavaCerts/master/certs.json', {_: new Date().getTime()}, function(data) {
           // JSON result in `data` variable
           console.log(data);
 

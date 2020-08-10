@@ -13,10 +13,12 @@
     <center>
       <div class="content">
         <img src="assets/images/420.png" alt="Logo" class="logo">
-        <h1 class="title">420 Signer</h1>
-        <h2 class="subtitle">The most powerful signing utility ever created.</h2>
+        <h1 class="title">Guava</h1>
+        <h2 class="subtitle">A beautiful, yet powerful signing utility.</h2>
         <button class="button enterButton" onclick="location.href = 'setup.html';" id="setupButton">Run Setup</button>
-        <button class="button enterButton" onclick="location.href = 'signing.html';" id="enterButton" style="display: none;">Enter 420</button>
+        <button class="button enterButton" onclick="location.href = 'signing.html';" id="enterpriseButton" style="display: none;">Guava Signer</button>
+        <p style="margin-bottom: -10px;"></p>
+        <button class="button enterButton" onclick="location.href = 'impactor.html';" id="impactorButton" style="display: none;">Guava Impactor</button>
         <div class="bottomText">
           <p>Created by the Ignition Team.</p>
         </div>
@@ -26,7 +28,8 @@
     <script>
       if (localStorage.getItem("isSetup")) {
         $("#setupButton").hide();
-        $("#enterButton").show();
+        $("#enterpriseButton").show();
+        $("#impactorButton").show();
       }
     </script>
   </body>
