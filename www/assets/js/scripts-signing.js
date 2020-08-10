@@ -95,6 +95,7 @@ function selectApp() {
                         document.getElementsByClassName("appName")[0].innerText = info.CFBundleDisplayName;
                         document.getElementsByClassName("appVersion")[0].innerText = info.CFBundleShortVersionString;
                         document.getElementsByClassName("appBuild")[0].innerText = info.CFBundleVersion;
+                        sessionStorage.setItem("ipaToSign", result.filePaths[0]);
                       });
                 });
                 rimraf("selectedIPA/", function () { console.log("done"); });
@@ -115,4 +116,34 @@ function selectFolder() {
             console.log(files);
         }
     });
+}
+
+function signApp() {
+
+    
+
+    exec('docker run -v "$PWD/www/:$PWD/www/" -w "$PWD/www/" 420signer -k "testCertificate/1234.p12" -m "testCertificate/1234.mobileprovision" -p "1234" -o output.ipa -z 9 test.ipa', (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            alert("Failed to sign test app. Please file a bug report using the text in the next alert");
+            alert(`${stderr}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            alert("Failed to sign test app. Please file a bug report using the text in the next alert");
+            alert(`${stderr}`);
+            return;
+        }
+        // console.log(`stdout: ${stdout}`);
+        if (fs.existsSync("www/output.ipa")) {
+            console.log("output.ipa exists");
+            location.href = 'signing.html';
+            localStorage.setItem("isSetup", true)
+        } else {
+            console.log("output.ipa does not exist");
+            alert("Failed to sign test app. Please file a bug report. Press CMD + OPTION + I or CTRL + ALT + I");
+        }
+    });
+
 }
